@@ -55,15 +55,24 @@
     "@loopback/rest": "^11.0.0",
     "@loopback/rest-explorer": "^4.0.0",
     "@loopback/service-proxy": "^4.0.0",
+    "@types/lodash": "^4.14.182",
+    "@types/md5": "^2.3.2",
+    "@types/moment": "^2.13.0",
+    "@types/query-string": "^6.3.0",
+    "axios": "^0.27.2",
+    "lodash": "^4.17.21",
+    "md5": "^2.3.0",
+    "moment": "^2.29.3",
+    "query-string": "^7.1.1",
     "tslib": "^2.0.0"
   },
   "devDependencies": {
     "@loopback/build": "^8.0.0",
-    "source-map-support": "^0.5.20",
+    "@loopback/eslint-config": "^12.0.0",
     "@loopback/testlab": "^4.0.0",
     "@types/node": "^10.17.60",
-    "@loopback/eslint-config": "^12.0.0",
     "eslint": "^7.32.0",
+    "source-map-support": "^0.5.20",
     "typescript": "~4.5.2"
   }
 }

@@ -1,4 +1,4 @@
-export class CardPaymentConfirm {
+export class VNPayCardPaymentConfirm {
   vnp_TmnCode: string // Mã website của merchant trên hệ thống của VNPAY. Ví dụ: 2QXUI4J4
   vnp_Amount: number // Số tiền thanh toán. VNPAY phản hồi số tiền nhân thêm 100 lần.
   vnp_BankCode: string // Mã Ngân hàng thanh toán. Ví dụ: NCB
@@ -12,5 +12,5 @@ export class CardPaymentConfirm {
   vnp_TxnRef: string // Giống mã gửi sang VNPAY khi gửi yêu cầu thanh toán. Ví dụ: 23554
   vnp_SecureHashType?: string // Loại mã băm sử dụng: SHA256, HmacSHA512
   vnp_SecureHash: string // Mã kiểm tra (checksum) để đảm bảo dữ liệu của giao dịch không bị thay đổi trong quá trình chuyển từ VNPAY về Website TMĐT.  Cần kiểm tra đúng checksum khi bắt đầu xử lý yêu cầu (trước khi thực hiện các yêu cầu khác)
-  constructor(data: Partial<CardPaymentConfirm>) {}
+  constructor(data: Partial<VNPayCardPaymentConfirm>) {}
 }

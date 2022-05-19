@@ -30,3 +30,9 @@ export const VNPResponseCode = {
   WRONG_PASSWORD_MANY_TIMES: '79',
   OTHER: '99'
 }
+
+export const HashType = {
+  HASH_TYPE_MD5:'MD5',
+  HASH_TYPE_SHA256: 'SHA256',
+  HASH_TYPE_SHA512: 'HMACSHA512',
+}

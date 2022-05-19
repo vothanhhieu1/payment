@@ -1,17 +1,13 @@
-import {
-  ConfigurationMapping,
-  PaymentRequest,
-  PaymentConfirm,
-} from '../typing.d'
+import { ConfigurationMapping } from '../typing.d'
 
-export interface PaymentService {
+export interface PaymentService<R, C> {
 
-  getConfigurations(option: any): Promise<ConfigurationMapping>
+  getConfigurations?(option?: any): Promise<any>
 
-  prepare(data: any): Promise<PaymentRequest>
+  prepare?(data?: any): Promise<R>
 
-  process(paymentRequest: PaymentRequest): Promise<any>
+  requestToProvider(paymentRequest: R): Promise<any> | any
 
-  confirm(paymentConfirm: PaymentConfirm): Promise<any>
+  confirmFromProvider?(paymentConfirm: C): Promise<any>
 
 }
