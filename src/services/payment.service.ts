@@ -1,13 +1,9 @@
-import { ConfigurationMapping } from '../typing.d'
+export interface PaymentService<S, R, C> {
 
-export interface PaymentService<R, C> {
-
-  getConfigurations?(option?: any): Promise<any>
-
-  prepare?(data?: any): Promise<R>
+  setConfigurations?(option?: S): void
 
   requestToProvider(paymentRequest: R): Promise<any> | any
 
-  confirmFromProvider?(paymentConfirm: C): Promise<any>
+  confirmFromProvider?(providerPaymentConfirm: R, paymentConfirm: C): Promise<any> | any
 
 }

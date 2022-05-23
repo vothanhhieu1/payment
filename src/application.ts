@@ -9,6 +9,7 @@ import {RestApplication} from '@loopback/rest';
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
 import {MySequence} from './sequence';
+import {PaymentComponent} from './payment.component';
 
 export {ApplicationConfig};
 
@@ -28,6 +29,7 @@ export class ComponentApplication extends BootMixin(
     this.configure(RestExplorerBindings.COMPONENT).to({
       path: '/explorer',
     });
+    this.component(PaymentComponent);
     this.component(RestExplorerComponent);
 
     this.projectRoot = __dirname;
