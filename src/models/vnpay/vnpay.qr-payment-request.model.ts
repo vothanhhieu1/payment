@@ -3,7 +3,7 @@ import { Vnpay } from '../../typing.d'
 import {VNPayPayment} from './vnpay.payment.model'
 
 export class VNPayQRPaymentRequest extends VNPayPayment<
-  Vnpay.PaymentData,
+  Vnpay.QRPaymentData,
   Vnpay.ProviderQRPaymentRequestData
  > {
 
@@ -11,7 +11,7 @@ export class VNPayQRPaymentRequest extends VNPayPayment<
      super(request)
    }
 
-   fillData(paymentData: Vnpay.PaymentData, configuration: Vnpay.QRPaymentConfiguration) {
+   fillData(paymentData: Vnpay.QRPaymentData, configuration: Vnpay.QRPaymentConfiguration) {
     const {
       amount,
       ccy,

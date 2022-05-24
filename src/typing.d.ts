@@ -50,10 +50,10 @@ export namespace Vnpay {
     orderType?: string
     ipAddr?: string
     currency?: string
-    ccy?: string
-    expDate?: string
-    desc?: string
-    purpose?: string
+  }
+
+  export interface PaymentConfirmData extends PaymentData {
+    confirm: { (): Promise<boolean> | boolean } | boolean
   }
 
   export interface QRPaymentData {
@@ -63,10 +63,13 @@ export namespace Vnpay {
     expDate?: string
     desc?: string
     purpose?: string
-    tipAndFee: string,
+    tipAndFee?: string,
   }
 
-  export interface PaymentConfirmData extends PaymentData {
+  export type ProductQuantity = Record<string, number>
+
+  export interface QRPaymentConfirmData extends QRPaymentData {
+    productQuantity?: ProductQuantity
     confirm: { (): Promise<boolean> | boolean } | boolean
   }
 
@@ -159,8 +162,10 @@ export namespace Vnpay {
     district_id?: string
     address?: string
     email?: string
-    addData: QRItemPayment,
-    checkSum: string
+    addData: QRItemPayment[],
+    checksum: string
     ccy: string
   }
+
+  export type ResponseMMS = { code: string, message: string, data?: any }
 }

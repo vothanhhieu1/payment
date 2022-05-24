@@ -39,8 +39,8 @@ export class VNPayCardPaymentRequest extends VNPayPayment<
     this.paymentData = paymentData
     this.providerData = providerData
     this.url = url
-    this.hashSecretKey = hashSecretType
-    this.hashSecretType = hashSecretKey
+    this.hashSecretKey = hashSecretKey
+    this.hashSecretType = hashSecretType
   }
 
   generateUrl(): string | undefined {

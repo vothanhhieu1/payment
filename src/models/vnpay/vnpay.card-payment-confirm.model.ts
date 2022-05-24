@@ -25,8 +25,8 @@ export class VNPayCardPaymentConfirm extends VNPayPayment<
     this.paymentData = paymentData
     this.providerData = providerData
     this.vnpaySecureHash = vnpaySecureHash
-    this.hashSecretKey = hashSecretType
-    this.hashSecretType = hashSecretKey
+    this.hashSecretKey = hashSecretKey
+    this.hashSecretType = hashSecretType
   }
 
   validChecksum() : boolean {

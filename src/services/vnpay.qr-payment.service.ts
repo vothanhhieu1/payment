@@ -1,11 +1,11 @@
 import axios from 'axios'
 import { PaymentService } from '.'
-import { VNPayQRPaymentRequest } from '../models'
+import { VNPayQRPaymentRequest, VNPayQRPaymentConfirm } from '../models'
 import { Vnpay } from '../typing'
 
 export class VNPayQRPaymentService implements PaymentService<
   Vnpay.QRPaymentConfiguration,
-  Vnpay.PaymentData,
+  Vnpay.QRPaymentData,
   Vnpay.ProviderQRPaymentConfirmData
   > {
 
@@ -28,9 +28,9 @@ export class VNPayQRPaymentService implements PaymentService<
   }
 
   confirmFromProvider(
-    paymentData: Vnpay.PaymentConfirmData,
+    paymentData: Vnpay.QRPaymentConfirmData,
     rawProviderData: Vnpay.ProviderQRPaymentConfirmData
-  ): Vnpay.ResponseQRIPN {
+  ): Vnpay.ResponseMMS {
     const cardPaymentConfirm = new VNPayQRPaymentConfirm({})
     cardPaymentConfirm.fillData(paymentData, rawProviderData, this.qrPaymentConfiguration)
     return cardPaymentConfirm.confirm()
