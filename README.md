@@ -64,11 +64,20 @@ Tạo URL payment:
   }
  
 ```
+URL Payment Link:
+```sh
+https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=2000000&vnp_Command=pay&vnp_CreateDate=20220524164321&vnp_CurrCode=VND&vnp_IpAddr=10.198.41.106&vnp_Locale=vn&vnp_OrderInfo=889&vnp_OrderType=payment&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A3000&vnp_SecureHash=91058361d12438036b3ac1157f93ef6bb152f4758402bd37cde005710901ccc5d1a0f2c4e611278e8abf84239759fdbe34588f4942930a8cc091bd9d3affa9f2&vnp_TmnCode=DJHOVPJF&vnp_TxnRef=902&vnp_Version=2.1.0
+```
 
 Xác thực thông tin từ VNPAY:
 
-- Tạo 1 api IPN (`Ghttp://domain/ipn`).
+- Tạo 1 api IPN (`GET: http://domain/ipn`).
 - VNPAY sẽ gọi về api trên xác thực lại thông tin thanh toán
+
+URL VNPAY gọi về:
+```sh
+http://localhost:3000/ipn?vnp_Amount=2000000&vnp_BankCode=NCB&vnp_BankTranNo=VNP13755134&vnp_CardType=ATM&vnp_OrderInfo=889&vnp_PayDate=20220524111258&vnp_ResponseCode=00&vnp_TmnCode=DJHOVPJF&vnp_TransactionNo=13755134&vnp_TransactionStatus=00&vnp_TxnRef=902&vnp_SecureHash=2dbd8e485627c191e73b775ea6d596a7c41eb045e45f1e99983e181637509e970b1103450a37446211b1fc5d01cfc21b9306c7c79405b8ce2371c162c8f57706
+```
 
 ```sh
  @inject(PaymentBindings.VNPAY) private vnpayPaymentService: VNPayCardPaymentService
@@ -105,6 +114,7 @@ Xác thực thông tin từ VNPAY:
     return confirmResponse
   }
 ```
+
 #### Thanh toán qua QR VNPAY
 
 Tạo QR Data
@@ -144,8 +154,10 @@ Tạo QR Data
     const res = await this.vnpayQRPaymentService.requestToProvider(paymentInfo)
     return res
   }
-  
-  Kết quả trả về thành công:
+ ```
+ 
+Kết quả trả về thành công:
+```sh
   {
     "code": "00",
     "message": "Success",
@@ -165,6 +177,42 @@ Xác thực thông tin từ VNPAY:
 
 - Tạo 1 api MMS (`POST http://domain/mms`).
 - VNPAY sẽ gọi về api trên xác thực lại thông tin thanh toán
+
+Dữ liệu mẫu VNPAY truyền về 
+```sh
+{
+  "code": "00",
+  "message": "Tru tien vi thanh cong",
+  "msgType": "1",
+  "txnId": "902",
+  "qrTrace": "244244631",
+  "bankCode": "VNPAYEWALLET",
+  "mobile": "0333521805",
+  "accountNo": "",
+  "amount": "20000",
+  "payDate": "20220524110234",
+  "masterMerCode": "A000000775",
+  "merchantCode": "0106921949",
+  "terminalId": "NEWWAY05",
+  "addData": [
+    {
+      "merchantType": "9999",
+      "serviceCode": "06",
+      "masterMerCode": "A000000775",
+      "merchantCode": "0106921949",
+      "terminalId": "NEWWAY05",
+      "productId": "",
+      "amount": "20000",
+      "ccy": "704",
+      "qty": "1",
+      "note": ""
+    }
+  ],
+  "checksum": "35A68A65132A9EAAB519EE4231CB0904",
+  "ccy": "704"
+}
+```
+Thực hiện confirm:
 
 ```sh
 @inject(PaymentBindings.VNPAY_QR) private vnpayQRPaymentService: VNPayQRPaymentService
