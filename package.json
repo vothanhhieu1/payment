@@ -1,5 +1,5 @@
 {
-  "name": "component",
+  "name": "Payment Component",
   "version": "0.0.1",
   "description": "Payment",
   "keywords": [
@@ -40,7 +40,7 @@
     "type": "git",
     "url": ""
   },
-  "author": "next_hieu.vo <hieu.vo@nexpando.com>",
+  "author": "hieu.vo <hieu.vo@nexpando.com>",
   "license": "",
   "files": [
     "README.md",
