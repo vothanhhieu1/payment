@@ -1,5 +1,5 @@
 import { PaymentService } from '.';
-import { Vnpay } from '../typing';
+import { Vnpay } from '../types';
 export declare class VNPayQRPaymentService implements PaymentService<Vnpay.QRPaymentConfiguration, Vnpay.QRPaymentData, Vnpay.ProviderQRPaymentConfirmData> {
     private qrPaymentConfiguration;
     setConfigurations(qrPaymentConfiguration: Vnpay.QRPaymentConfiguration): void;

@@ -4,4 +4,4 @@ export * from './constant'
 export * from './utils'
 export * from './models';
 export * from './services';
-export * from './typing.d'
+export * from './types'

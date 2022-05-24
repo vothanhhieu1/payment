@@ -1,4 +1,4 @@
-import { Vnpay } from '../../typing.d'
+import { Vnpay } from '../../types'
 import {VNPayPayment} from './vnpay.payment.model'
 import _ from 'lodash'
 import { VNPResponseCodeIPN, VNPResponseIPN } from '../../constant'

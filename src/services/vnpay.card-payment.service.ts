@@ -1,6 +1,6 @@
 import { PaymentService } from '.'
 import { VNPayCardPaymentConfirm, VNPayCardPaymentRequest } from '../models'
-import { Vnpay } from '../typing'
+import { Vnpay } from '../types'
 
 export class VNPayCardPaymentService implements PaymentService<
   Vnpay.PaymentConfiguration,

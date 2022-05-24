@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { PaymentService } from '.'
 import { VNPayQRPaymentRequest, VNPayQRPaymentConfirm } from '../models'
-import { Vnpay } from '../typing'
+import { Vnpay } from '../types'
 
 export class VNPayQRPaymentService implements PaymentService<
   Vnpay.QRPaymentConfiguration,

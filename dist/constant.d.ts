@@ -1,4 +1,4 @@
-import { Vnpay } from './typing.d';
+import { Vnpay } from './types';
 export declare const VNPBankCode: {
     VNPAYQR: string;
     VNBANK: string;

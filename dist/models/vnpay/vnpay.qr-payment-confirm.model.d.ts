@@ -1,4 +1,4 @@
-import { Vnpay } from '../../typing.d';
+import { Vnpay } from '../../types';
 import { VNPayPayment } from './vnpay.payment.model';
 export declare class VNPayQRPaymentConfirm extends VNPayPayment<Vnpay.QRPaymentConfirmData, Vnpay.ProviderQRPaymentConfirmData> {
     isValidChecksum: boolean;

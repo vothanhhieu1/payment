@@ -6,14 +6,14 @@ export type Locale = 'vn' | 'en'
 
 export namespace Vnpay {
 
-  export type BankCodeType = VNPBankCode.VNPAYQR | VNPBankCode.VNBANK | VNPBankCode.INTCARD | string
+  //export type BankCodeType = VNPBankCode.VNPAYQR | VNPBankCode.VNBANK | VNPBankCode.INTCARD | string
 
   export type ProviderCardPaymentRequestData = {
     vnp_Version: string // Phiên bản api mà merchant kết nối. Phiên bản hiện tại là : 2.0.1 và 2.1.0
     vnp_Command: string // Mã API sử dụng, mã cho giao dịch thanh toán là: pay
     vnp_TmnCode: string // Mã website của merchant trên hệ thống của VNPAY. Ví dụ: 2QXUI4J4
     vnp_Amount: number // Số tiền thanh toán. Số tiền không mang các ký tự phân tách thập phân, phần nghìn, ký tự tiền tệ. Để gửi số tiền thanh toán là 10,000 VND (mười nghìn VNĐ) thì merchant cần nhân thêm 100 lần (khử phần thập phân), sau đó gửi sang VNPAY là: 1000000
-    vnp_BankCode?: VNPBankCodeType | null // Mã phương thức thanh toán, mã loại ngân hàng hoặc ví điện tử thanh toán.  Nếu không gửi sang tham số này, chuyển hướng người dùng sang VNPAY chọn phương thức thanh toán.
+    vnp_BankCode?: string // Mã phương thức thanh toán, mã loại ngân hàng hoặc ví điện tử thanh toán.  Nếu không gửi sang tham số này, chuyển hướng người dùng sang VNPAY chọn phương thức thanh toán.
     vnp_CreateDate: string // Ví dụ: 20170829103111
     vnp_CurrCode: string // Đơn vị tiền tệ sử dụng thanh toán. Hiện tại chỉ hỗ trợ VND
     vnp_IpAddr: string // Địa chỉ IP của khách hàng thực hiện giao dịch. Ví dụ: 13.160.92.202

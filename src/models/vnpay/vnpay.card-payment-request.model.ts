@@ -1,4 +1,4 @@
-import { Vnpay } from '../../typing.d'
+import { Vnpay } from '../../types'
 import * as queryString from 'query-string'
 import _ from 'lodash'
 import {VNPayPayment} from './vnpay.payment.model'

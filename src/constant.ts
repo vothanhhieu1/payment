@@ -1,4 +1,4 @@
-import { Vnpay } from './typing.d'
+import { Vnpay } from './types'
 
 export const VNPBankCode = {
   VNPAYQR: 'VNPAYQR', //Thanh toán quét mã QR
