@@ -14,7 +14,7 @@ npm install nexpando-payment
 ```
 ## Cách dùng
 
-Thêm payment component vào `application.js`
+Thêm `PaymentComponent` vào `application.js`
 
 ```sh
 this.component(PaymentComponent);
