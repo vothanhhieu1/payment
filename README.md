@@ -206,6 +206,7 @@ Xác thực thông tin từ VNPAY:
 ```
 
 Tham khảo chi tiết [VNPAY Payment project example](https://github.com/vothanhhieu1/vnpay-payment-example)
+
 Tài liệu:
 - [Thanh toán qua QR Code](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/73b902ba-08d2-40a4-995f-91b9a090052c/VIE_Tai_lieu_ket_noi_VNPAYQR.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220524%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220524T021554Z&X-Amz-Expires=86400&X-Amz-Signature=65c8250ff3e0327e3b79f9d16d83187d1c6ea1270e6ab904e4d8d5951c5f2fb6&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%255BVIE%255D%2520Tai%2520lieu%2520ket%2520noi%2520VNPAYQR.pdf%22&x-id=GetObject)
 - [Thanh toán qua Công Thanh Toán](https://sandbox.vnpayment.vn/apis/docs/thanh-toan-pay/pay.html)
